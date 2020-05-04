@@ -50,17 +50,17 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          Filter
-        </p>
-        <input type="text" value={this.state.filter} onChange={this.onChangeText} style={{marginBottom: 8}}/><br/>
-        <button onClick={this.filter}>Saring</button>
+          <p className="App-intro">
+            Filter
+          </p>
+          <input type="text" value={this.state.filter} onChange={this.onChangeText} style={{marginBottom: 8}}/><br/>
+          <button onClick={this.filter}>Saring</button>
 
-        <div style={{display: 'flex', justifyContent: 'center', textAlign: 'left'}}>
-          <ol>
-            { this.state.provinces.map(this.renderProvinces) }
-          </ol>
+          <div style={{display: 'flex', justifyContent: 'center', textAlign: 'left'}}>
+            <ol>
+              { this.state.provinces.map(this.renderProvinces) }
+            </ol>
+          </div>
         </div>
       </div>
     );
