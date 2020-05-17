@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Starting code build ...
+      - echo Downloading dependencies ...
+      - npm install
+  build:
+    commands:
+      - echo Preparing deployment ...
+      - npm run build
+      - echo Deploying to S3
+      - cd build
+      - ls
+      - aws s3 sync --delete . "s3://react.serverless.my.id"
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - aws cloudfront create-invalidation --distribution-id E7EOR2NRZICLJ --paths '/*'
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'build'
