@@ -49,7 +49,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React staging</h2>
+          <h2>Welcome to React staging 20201705_1344</h2>
           <p className="App-intro">
             Filter
           </p>
